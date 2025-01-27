@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  名前:<span th:text="${name}">dummy</span>
+  <span th:text="${message}">dummy</span>
+  
+  <form th:object="${car}">
+    車の名前:<input type="text" th:field="*{name}">
+    車のスピード:<input type="text" th:field="*{speed}">
+    <!-- 車のガソリン残量:<span th:text="*{gas}">dummy</span> -->
+    <span th:text="#{message.name}"></span>:<input type="text" th:field="*{name}">
+    <button th:text="${message.buttonName}">dummy</button>
+    
+</form>
+</body>
+</html>

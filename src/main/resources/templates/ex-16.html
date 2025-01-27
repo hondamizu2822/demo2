@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>チャットアプリ</title>
+</head>
+<body>
+    <h2>チャットアプリ</h2>
+    <form action="/post" method="post">
+        <label>名前:</label>
+        <input type="text" name="name" required>
+        <br>
+        <label>コメント:</label>
+        <input type="text" name="comment" required>
+        <br>
+        <button type="submit">投稿</button>
+    </form>
+
+    <h3>チャット履歴</h3>
+    <ul>
+        <th:block th:each="user : ${chatList}">
+            <li><strong th:text="${user.name}"></strong>: <span th:text="${user.comment}"></span></li>
+        </th:block>
+    </ul>
+</body>
+</html>
