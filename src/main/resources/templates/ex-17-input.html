@@ -10,16 +10,16 @@
     <form action="/submit" method="post" th:object="${form}">
         <label for="name">名前：</label><br>
         <input type="text" id="name" name="name" th:field="*{name}"><br>
-        <span class="error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span><br>
+        <span class="error" th:if="${#fields.hasErrors('name')}" style="color:red" th:errors="*{name}"></span><br>
     
         <label for="email">メール：</label><br>
         <input type="email" id="email" name="email" th:field="*{email}"><br>
-        <span class="error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span><br>
+        <span class="error" th:if="${#fields.hasErrors('email')}" style="color:red" th:errors="*{email}"></span><br>
     
         <label for="gender">性別：</label><br>
         <input type="radio" id="male" name="gender" value="男" th:field="*{gender}"> 男<br>
         <input type="radio" id="female" name="gender" value="女" th:field="*{gender}"> 女<br>
-        <span class="error" th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}"></span><br>
+        <span class="error" th:if="${#fields.hasErrors('gender')}" style="color:red" th:errors="*{gender}"></span><br>
     
         <button type="submit">送信</button>
 

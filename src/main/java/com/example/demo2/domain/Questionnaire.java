@@ -1,12 +1,23 @@
 package com.example.demo2.domain;
 
+import java.util.List;
+
 public class Questionnaire {
+
+    private Integer id;
     private String name;
     private String email;
     private String gender;
-    private String hobbies;
-    private String language;
-    private String comments;
+    private List<String> hobbyList;
+    private String lang;
+    private String other;
+    
+    public Integer getId() {
+        return id;
+    }
+    public void setId(Integer id) {
+        this.id = id;
+    }
     public String getName() {
         return name;
     }
@@ -25,23 +36,23 @@ public class Questionnaire {
     public void setGender(String gender) {
         this.gender = gender;
     }
-    public String getHobbies() {
-        return hobbies;
+    public List<String> getHobbyList() {
+        return hobbyList;
     }
-    public void setHobbies(String hobbies) {
-        this.hobbies = hobbies;
+    public void setHobbyList(List<String> hobbyList) {
+        this.hobbyList = hobbyList;
     }
-    public String getLanguage() {
-        return language;
+    public String getLang() {
+        return lang;
     }
-    public void setLanguage(String language) {
-        this.language = language;
+    public void setLang(String lang) {
+        this.lang = lang;
     }
-    public String getComments() {
-        return comments;
+    public String getOther() {
+        return other;
     }
-    public void setComments(String comments) {
-        this.comments = comments;
+    public void setOther(String other) {
+        this.other = other;
     }
 
 

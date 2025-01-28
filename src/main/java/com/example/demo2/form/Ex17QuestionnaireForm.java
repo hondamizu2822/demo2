@@ -5,30 +5,32 @@ import java.util.List;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 public class Ex17QuestionnaireForm {
 
-    @Size(min = 1, max = 127, message = "1桁以上127桁以下で入力してください")
-    @NotBlank(message = "名前を入力してください")
+    @NotBlank(message = "名前は必須です")
+    @Size(min = 1, max = 127, message = "名前は１文字以上１２７文字以内で入力してください")
     private String name;
 
-    @Size(min = 1, max = 127, message = "Eメールは1文字以上127文字以内で記載してください")
-    @Email(message = "Eメールの形式が不正です")
+    @Size(min = 1, max = 127, message = "メールアドレスは１文字以上１２７文字以内で入力してください")
+    @Email(message = "メールアドレスの形式が正しくありません")
     private String email;
 
     @NotBlank(message = "性別を選択してください")
     private String gender;
 
-    @NotEmpty(message = "趣味を1つ以上選択してください")
-    private List<String> hobbies;
+    @NotEmpty(message = "趣味を少なくとも１つ選択してください")
+    private List<Integer> hobbyList;
+    
+    @NotNull(message = "好きな言語を選択してください")
+    private Integer lang;
 
-    private String language;
+    @Size(min = 1, max = 2000, message = "その他は１文字以上２０００文字以内で入力してください")
+    private String other;
 
-    @Size(min = 1, max = 20000, message = "1桁以上20000桁以内で入力してください")
-    private String comments;
 
-    // Getter and Setter
     public String getName() {
         return name;
     }
@@ -53,27 +55,30 @@ public class Ex17QuestionnaireForm {
         this.gender = gender;
     }
 
-    public List<String> getHobbies() {
-        return hobbies;
+    public List<Integer> getHobbyList() {
+        return hobbyList;
     }
 
-    public void setHobbies(List<String> hobbies) { // 修正: 引数を追加
-        this.hobbies = hobbies;
+    public void setHobbyList(List<Integer> hobbyList) {
+        this.hobbyList = hobbyList;
     }
 
-    public String getLanguage() {
-        return language;
+    public Integer getLang() {
+        return lang;
     }
 
-    public void setLanguage(String language) {
-        this.language = language;
+    public void setLang(Integer lang) {
+        this.lang = lang;
     }
 
-    public String getComments() {
-        return comments;
+    public String getOther() {
+        return other;
     }
 
-    public void setComments(String comments) {
-        this.comments = comments;
+    public void setOther(String other) {
+        this.other = other;
     }
+
+
+
 }
