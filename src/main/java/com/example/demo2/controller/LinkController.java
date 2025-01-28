@@ -20,7 +20,7 @@ public class LinkController {
 
     @RequestMapping("/page3")
     public String page3() {
-        return "page3"; // 
+        return "page3"; 
     }
 
 }

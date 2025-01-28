@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>入力確認画面</title>
+</head>
+<body>
+    <h1>入力確認画面</h1>
+    名前：<span th:text="${form.name}"></span><br>
+    メール：<span th:text="${form.email}"></span><br>
+    性別：<span th:text="${form.gender}"></span><br>
+    趣味：<br>
+    <input type="checkbox" name="hobbies" value="野球" th:field="*{hobbies}"> 野球<br>
+    <input type="checkbox" name="hobbies" value="サッカー" th:field="*{hobbies}"> サッカー<br>
+    <input type="checkbox" name="hobbies" value="テニス" th:field="*{hobbies}"> テニス<br>
+    <span class="error" th:if="${#fields.hasErrors('hobbies')}" th:errors="*{hobbies}"></span><br>
+    
+    好きな言語：<span th:text="${form.language}"></span><br>
+    その他：<span th:text="${form.comments}"></span><br>
+
+    <form action="/confirm" method="post">
+    
+    </form>
+</body>
+</html>
